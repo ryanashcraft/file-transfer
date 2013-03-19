@@ -25,6 +25,8 @@ static char* buffer;
 static FILE* output;
 
 void exit_handler(int signal) {
+	fprintf(stderr, LOG_PRE "%s\n", "interrupts detected, closing socket");
+
 	sock_close(isocket);
 
 	free(buffer);
@@ -65,6 +67,7 @@ int main(int argc, char** argv) {
 			buffer[message_size] = '\0';
 			fwrite(buffer, sizeof(char), message_size, output);
 			fflush(output);
+			fprintf(stderr, LOG_PRE "%s\n", "wrote to file");
 		}
 	}
 
