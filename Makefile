@@ -114,6 +114,7 @@ backup:
 # Create necessary directories
 dirs:
 		@-if [ ! -e $(STORE) ]; then mkdir $(STORE); fi;
+		@-if [ ! -e $(BIN) ]; then mkdir $(BIN); fi;
 		@-$(foreach DIR,$(DIRS), if [ ! -e $(STORE)/$(DIR) ]; \
 		 then mkdir $(STORE)/$(DIR); fi; )
 		@-$(foreach DIR,$(TCP_CLIENT_DIRS), if [ ! -e $(STORE)/$(DIR) ]; \
