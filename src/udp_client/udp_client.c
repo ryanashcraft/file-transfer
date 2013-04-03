@@ -34,7 +34,6 @@ int main(int argc, char** argv) {
 	size_t size_read = 0;
 	while ((size_read = fread(buffer, sizeof(char), BUFFER_SIZE, input))) {
 		sock_send(sock, size_read, buffer);
-		sleep(1);
 	}
 
 	fprintf(stderr, LOG_PRE "%s\n", "file sent, closing socket");
