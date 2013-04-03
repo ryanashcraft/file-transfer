@@ -1,4 +1,4 @@
-# CS 3251 Problem Set 2
+# TCP/UDP File Transfer Suite 
 
 `make all` generates four binaries in the `bin` directory: tcpserver, tcpclient, udpserver, and udpclient. Each have the same required runtime arguments: the input/output filename, the IP address (to bind or connect to), and the port number (again to bind or connect to).
 
